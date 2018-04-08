@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/config.png</file>
+        <file>icons/exit.png</file>
+        <file>icons/mindwave.ico</file>
+        <file>icons/open.png</file>
+        <file>icons/save.png</file>
+        <file>icons/update.png</file>
+        <file>icons/version.png</file>
+        <file>icons/data.png</file>
+        <file>icons/image.png</file>
+        <file>icons/save_all.png</file>
+        <file>icons/close.png</file>
+    </qresource>
+</RCC>

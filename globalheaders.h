@@ -1,0 +1,47 @@
+#ifndef GLOBALHEADERS_H
+#define GLOBALHEADERS_H
+
+#include <QAction>
+#include <QApplication>
+#include <QComboBox>
+#include <QCloseEvent>
+#include <QChar>
+#include <QDataStream>
+#include <QDateTime>
+#include <QDebug>
+#include <QEventLoop>
+#include <QFile>
+#include <QFileDialog>
+#include <QFileInfo>
+#include <QHBoxLayout>
+#include <QIcon>
+#include <QImage>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QLabel>
+#include <QLineEdit>
+#include <QList>
+#include <QMenu>
+#include <QMenuBar>
+#include <QMessageBox>
+#include <QPainter>
+#include <QPushButton>
+#include <QPlainTextEdit>
+#include <QProcess>
+#include <QString>
+#include <QStatusBar>
+#include <QSize>
+#include <QSplineSeries>
+#include <QtCharts/QtCharts>
+#include <QtCharts/QChart>
+#include <QtCharts/QChartView>
+#include <QtCharts/QChartGlobal>
+#include <QTextCodec>
+#include <QTextCursor>
+#include <QTextStream>
+#include <QTimer>
+#include <QThread>
+#include <QRadioButton>
+#include <QWidget>
+
+#endif // GLOBALHEADERS_H
