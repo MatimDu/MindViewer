@@ -1,39 +1,30 @@
-QT       += core gui charts
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT       += core gui widgets
 
 TARGET = MindViewer
 TEMPLATE = app
-
 DEFINES += QT_DEPRECATED_WARNINGS
-
+INCLUDEPATH += $$PWD/qextserialport/
+               $$PWD
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    qextserial/qextserialport.cpp \
-    comwidget.cpp \
     ThinkGearStreamParser.cpp \
-    highlighter.cpp
+    highlighter.cpp \
+    comwidget.cpp
 
 HEADERS += \
         mainwindow.h \
-    globalheaders.h \
-    qextserial/qextserialport.h \
-    qextserial/qextserialport_global.h \
-    comwidget.h \
     ThinkGearStreamParser.h \
-    highlighter.h
-
-win32 {
-     SOURCES += qextserial/qextserialport_win.cpp
-}
-
-unix {
-     SOURCES += qextserial/qextserialport_unix.cpp
-}
+    highlighter.h \
+    comwidget.h
 
 RESOURCES += \
-    mvicon.qrc
+    res.qrc
+RC_FILE += icon.rc
 
-OTHER_FILES += mvicon.rc
-
-RC_FILE += mvicon.rc
+ICON += icon.rc
+DESTDIR = bin
+OBJECTS_DIR = tmp/obj
+MOC_DIR = tmp/moc
+RCC_DIR = tmp/rcc
+UI_DIR  = tmp/ui

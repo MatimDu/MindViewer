@@ -1,10 +1,14 @@
 #ifndef COMWIDGET_H
 #define COMWIDGET_H
 
-#include "globalheaders.h"
-#include "qextserial/qextserialport.h"
+#include <QString>
+#include <QLabel>
+#include <QPushButton>
+#include <QLineEdit>
+#include <QRadioButton>
+#include <QComboBox>
+#include <QMessageBox>
 #include <iostream>
-
 using namespace std;
 
 #define nullptr NULL
@@ -45,10 +49,19 @@ public:
 signals:
     void sendRawData(QString str);
     void sendFilteredData(bool valid,
-                          unsigned char signal,unsigned char delta,unsigned char theta,
-                          unsigned char lowalpha,unsigned char highalpha,unsigned char lowbeta,
-                          unsigned char highbeta,unsigned char lowgamma,unsigned char midgamma,
-                          unsigned char attention,unsigned char meditation,unsigned char rawdata,unsigned char blink);
+                          unsigned char signal,
+                          unsigned char delta,
+                          unsigned char theta,
+                          unsigned char lowalpha,
+                          unsigned char highalpha,
+                          unsigned char lowbeta,
+                          unsigned char highbeta,
+                          unsigned char lowgamma,
+                          unsigned char midgamma,
+                          unsigned char attention,
+                          unsigned char meditation,
+                          unsigned char rawdata,
+                          unsigned char blink);
 public slots:
     void on_comButtonOpen_triggered();
     void on_comButtonClose_triggered();

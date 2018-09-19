@@ -5,15 +5,6 @@ Highlighter::Highlighter(QTextDocument *parent)
 {
     HighlightingRule rule;
 
-    keywordFormat.setForeground(Qt::darkBlue);
-    keywordFormat.setFontWeight(QFont::Bold);
-    QStringList keywordPatterns;
-    keywordPatterns << "\\bclass\\b" << "\\bconst\\b";
-    foreach (const QString &pattern, keywordPatterns) {
-        rule.pattern = QRegExp(pattern);
-        rule.format = keywordFormat;
-        highlightingRules.append(rule);
-    }
     startFormat.setFontWeight(QFont::Bold);
     startFormat.setForeground(Qt::darkMagenta);
     rule.pattern = QRegExp("AA AA");//同步开始
@@ -22,12 +13,12 @@ Highlighter::Highlighter(QTextDocument *parent)
 
     endFormat.setFontWeight(QFont::Bold);
     endFormat.setForeground(Qt::darkMagenta);
-    rule.pattern = QRegExp("55[\\s]$");//传输结束
+    rule.pattern = QRegExp("55");//传输结束
     rule.format = endFormat;
     highlightingRules.append(rule);
 
     checksumFormat.setForeground(Qt::red);
-    rule.pattern = QRegExp("\\s\\w\\w\\s$");//校验值
+    rule.pattern = QRegExp("\\s\\d\\d[.+]AA AA");//校验值
     rule.format = checksumFormat;
     highlightingRules.append(rule);
 }
