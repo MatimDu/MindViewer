@@ -1,9 +1,8 @@
-
 #ifndef _QEXTSERIALPORT_H_
 #define _QEXTSERIALPORT_H_
 
 /*POSIX CODE*/
-#ifdef _TTY_POSIX_
+#ifndef _TTY_POSIX_
 #include "posix_qextserialport.h"
 #define QextBaseType Posix_QextSerialPort
 
@@ -27,7 +26,6 @@ class QextSerialPort: public QextBaseType
 	    QextSerialPort(const QextSerialPort& s);
 	    QextSerialPort& operator=(const QextSerialPort&);
 	    virtual ~QextSerialPort();
-
 };
 
 #endif
