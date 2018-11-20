@@ -15,14 +15,16 @@ SOURCES += \
     ThinkGearStreamParser.cpp \
     qextserialport/qextserialbase.cpp \
     qextserialport/qextserialport.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    com.cpp
 
 HEADERS += \
         mainwindow.h \
     ThinkGearStreamParser.h \
     qextserialport/qextserialbase.h \
     qextserialport/qextserialport.h \
-    mainwindow.h
+    mainwindow.h \
+    com.h
 win32:{
 HEADERS += $$PWD/qextserialport/win_qextserialport.h
 SOURCES += $$PWD/qextserialport/win_qextserialport.cpp
@@ -35,4 +37,5 @@ RESOURCES += \
     res.qrc
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    com.ui
