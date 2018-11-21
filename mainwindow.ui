@@ -29,6 +29,7 @@
     </property>
     <addaction name="actionOpen"/>
     <addaction name="actionClose"/>
+    <addaction name="actionCOm"/>
    </widget>
    <widget class="QMenu" name="menuHelp_H">
     <property name="title">
@@ -75,6 +76,11 @@
   <action name="actionQt">
    <property name="text">
     <string>Qt</string>
+   </property>
+  </action>
+  <action name="actionCOm">
+   <property name="text">
+    <string>COM</string>
    </property>
   </action>
  </widget>

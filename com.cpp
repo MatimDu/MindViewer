@@ -249,5 +249,6 @@ void COM::on_pushButtonOpen_clicked()
 void COM::on_pushButtonClose_clicked()
 {
     myCom->close();
-        myCom=NULL;
+    myCom=NULL;
+    ui->lineStauts->setText(tr("Close"));
 }
