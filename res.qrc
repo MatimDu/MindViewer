@@ -23,5 +23,6 @@
         <file>icons/redo.svg</file>
         <file>icons/history.svg</file>
         <file>icons/leader.png</file>
+        <file>icons/mind.svg</file>
     </qresource>
 </RCC>
