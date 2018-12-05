@@ -9,7 +9,11 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForLocale(codec);
     MainWindow w;
     w.setWindowIcon(QIcon(":/icons/mind.svg"));
-    w.setMinimumSize(180,60);
+    w.setWindowTitle(QObject::tr("MindViewer"));
+    QFile file(":/configuration/style1.qss");
+    file.open(QIODevice::Text|QIODevice::ReadOnly);
+    w.setStyleSheet(file.readAll());
+    w.setMinimumSize(600,400);
     w.resize(800,600);
     w.show();
 

@@ -1,5 +1,5 @@
 #include "COM.h"
-#include "ui_com.h"
+#include "ui_COM.h"
 
 COM::COM(QWidget *parent) :
     QWidget(parent),
@@ -44,15 +44,15 @@ void COM::initWidget()
     ComList<<"COM0"<<"COM1"<<"COM2"<<"COM3"<<"COM4"<<"COM5"<<
                 "COM6"<<"COM7"<<"COM8";
 #endif
-    ui->comboBoxPort->addItems(ComList);
+    ui->boxPort->addItems(ComList);
     braudList<<"50"<<"75"<<"100"<<"150"<<"300"<<"600"<<"1200"<<"2400"
                 <<"4800"<<"9600"<<"19200"<<"38400"<<"43000"<<"56000"
                <<"57600"<<"115200"<<"128000";
-    ui->comboBoxBraud->addItems(braudList);
-    ui->comboBoxBraud->setCurrentText("57600");
-    ui->comboBoxDataBit->setCurrentText("8");
-    ui->comboBoxStopBit->setCurrentText("1");
-    ui->comboBoxCheckBit->setCurrentText("NONE");
+    ui->boxBraud->addItems(braudList);
+    ui->boxBraud->setCurrentText("57600");
+    ui->boxDataBit->setCurrentText("8");
+    ui->boxStopBit->setCurrentText("1");
+    ui->boxCheckBit->setCurrentText("NONE");
     ui->lineStauts->setText(tr("Close"));
     ui->lineStauts->setReadOnly(true);
 }
@@ -183,7 +183,7 @@ void COM::internalTime()
 
 void COM::on_pushButtonOpen_clicked()
 {
-    QString portName = ui->comboBoxPort->currentText();//获取串口名
+    QString portName = ui->boxPort->currentText();//获取串口名
 #ifdef Q_OS_LINUX
     myCom = new QextSerialPort("/dev/" + portName);
 #elif defined (Q_OS_WIN)
@@ -191,11 +191,11 @@ void COM::on_pushButtonOpen_clicked()
 #endif
     QObject::connect(myCom,SIGNAL(readyRead()),this,SLOT(readMyCom()));
     //设置波特率
-    myCom->setBaudRate((BaudRateType)ui->comboBoxBraud->currentText().toInt());
+    myCom->setBaudRate((BaudRateType)ui->boxBraud->currentText().toInt());
     //设置数据位
-    myCom->setDataBits((DataBitsType)ui->comboBoxDataBit->currentText().toInt());
+    myCom->setDataBits((DataBitsType)ui->boxDataBit->currentText().toInt());
     //设置校验
-    switch(ui->comboBoxCheckBit->currentIndex())
+    switch(ui->boxCheckBit->currentIndex())
     {
         case 0:
             myCom->setParity(PAR_NONE);
@@ -212,7 +212,7 @@ void COM::on_pushButtonOpen_clicked()
             break;
     }
     //设置停止位
-    switch(ui->comboBoxStopBit->currentIndex())
+    switch(ui->boxStopBit->currentIndex())
     {
          case 0:
              myCom->setStopBits(STOP_1);
