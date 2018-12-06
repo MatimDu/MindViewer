@@ -1,4 +1,4 @@
-QT       += core gui widgets
+QT       += core gui widgets sql
 
 TARGET = MindViewer
 TEMPLATE = app
@@ -16,14 +16,16 @@ SOURCES += \
     qextserialport/qextserialbase.cpp \
     qextserialport/qextserialport.cpp \
     COM.cpp \
-    Widget.cpp
+    Widget.cpp \
+    Data.cpp
 
 HEADERS += \
     ThinkGearStreamParser.h \
     qextserialport/qextserialbase.h \
     qextserialport/qextserialport.h \
     COM.h \
-    Widget.h
+    Widget.h \
+    Data.h
 win32:{
 HEADERS += $$PWD/qextserialport/win_qextserialport.h
 SOURCES += $$PWD/qextserialport/win_qextserialport.cpp

@@ -8,20 +8,9 @@ COM::COM(QWidget *parent) :
     ui->setupUi(this);
     initWidget();
     myCom=NULL;
-    QString filename_log = QDateTime::currentDateTime().toString("yyyyMMdd") + ".txt";
-    QFile file(filename_log);
-    //如果打开失败则给出提示并退出函数
-    if(!file.open(QFile::WriteOnly | QIODevice::Text|QIODevice::Append))
-        QMessageBox::information(this,tr("提示"),tr("无法打开日志文件"),QMessageBox::Ok);
-    file.close();
-    write2file(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss dddd") + '\n');
     internalTimer = new QTimer;
     QObject::connect(internalTimer,SIGNAL(timeout()),this,SLOT(internalTime()));
     internalTimer->start(1000*60*5);
-    QString filename = QDir::currentPath() + QDir::separator() + "data.txt";
-    if(filename.isEmpty()){
-        return;
-    }
 }
 
 COM::~COM()
@@ -55,6 +44,21 @@ void COM::initWidget()
     ui->boxCheckBit->setCurrentText("NONE");
     ui->lineStauts->setText(tr("Close"));
     ui->lineStauts->setReadOnly(true);
+    QFile file(":/configuration/style1.qss");
+    file.open(QIODevice::Text|QIODevice::ReadOnly);
+    this->setStyleSheet(file.readAll());
+    file.close();
+    QString filename_log = QDateTime::currentDateTime().toString("yyyyMMdd") + ".txt";
+    file.setFileName(filename_log);
+    //如果打开失败则给出提示并退出函数
+    if(!file.open(QFile::WriteOnly | QIODevice::Text|QIODevice::Append))
+        QMessageBox::information(this,tr("提示"),tr("无法打开日志文件"),QMessageBox::Ok);
+    file.close();
+    write2file(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss dddd") + '\n');
+    QString filename = QDir::currentPath() + QDir::separator() + "data.txt";
+    if(filename.isEmpty()){
+        return;
+    }
 }
 
 void COM::write2file(QString str)

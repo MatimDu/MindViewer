@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <QString>
 #include <QSqlDatabase>
+#include <QSqlTableModel>
 #include <QSqlError>
 #include <QSqlQuery>
 
@@ -17,7 +18,9 @@ public:
     QStringList getQuestionIDList();
     QString getQuestionDetail(int id);
     QStringList getLanguage();
+public:
     QSqlQuery *query;
+    QSqlTableModel *model;
 private:
     QSqlDatabase db;
     QString sql;
