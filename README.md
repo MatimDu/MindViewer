@@ -1,9 +1,25 @@
-Template
+# MindViewer
 
-#Version
+使用TGAM模块的脑电波可视化工具
+
+# Build
+
+Qt 5.1 --> QSerialPort 模块
+
+## Version
+
+2019-7-3:
+
+重置项目，重新开始
+
 2018-8-15：
+
 添加图片和图标
+
 2018-8-14：
+
 创建菜单和动作
+
 2018-8-13：
+
 初始化
