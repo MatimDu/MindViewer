@@ -14,7 +14,8 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    thinkgearstreamparser.hpp
 RESOURCES += \
     res.qrc
 
