@@ -25,7 +25,6 @@ extern "C" {
 #define PARSER_CODE_MEDITATION         0x05 //冥想值
 #define PARSER_CODE_8BITRAW_SIGNAL     0x06 //8位源信号
 #define PARSER_CODE_RAW_MARKER         0x07 //源标志
-
 #define PARSER_CODE_RAW_SIGNAL         0x80 //源信号
 #define PARSER_CODE_EEG_POWERS         0x81
 #define PARSER_CODE_ASIC_EEG_POWER_INT 0x83
@@ -78,34 +77,27 @@ parseDataRow( ThinkGearStreamParser *parser, unsigned char *rowPtr );
 
 /**
  * @param parser              Pointer to a ThinkGearStreamParser object.
+ * @param parser              指向 ThinkGearStreamParser 对象的指针.
+ *
  * @param parserType          One of the PARSER_TYPE_* constants defined above:
  *                            PARSER_TYPE_PACKETS or PARSER_TYPE_2BYTERAW.
+ * @param parserType          上面已定义的PARSER_TYPE_* constants 之一:
+ *                            PARSER_TYPE_PACKETS or PARSER_TYPE_2BYTERAW.
+ *
  * @param handleDataValueFunc A user-defined callback function that will
  *                            be called whenever a data value is parsed
  *                            from a Packet.
+ * @param handleDataValueFunc 用户定义的用于包数据值解析完成的回调函数
+ *
  * @param customData          A pointer to any arbitrary data that will
  *                            also be passed to the handleDataValueFunc
  *                            whenever a data value is parsed from a
  *                            Packet.
  *
  * @return -1 if @c parser is NULL.
- * @return -2 if @c parserType is invalid.
- * @return 0 成功.
- */
-
-/**
- * @param parser              指向 ThinkGearStreamParser 对象的指针.
- * @param parserType          水面已定义的PARSER_TYPE_* constants 之一:
- *                            PARSER_TYPE_PACKETS or PARSER_TYPE_2BYTERAW.
- * @param handleDataValueFunc A user-defined callback function that will
- *                            be called whenever a data value is parsed
- *                            from a Packet.
- * @param customData          A pointer to any arbitrary data that will
- *                            also be passed to the handleDataValueFunc
- *                            whenever a data value is parsed from a
- *                            Packet.
- *
  * @return -1 if @c parser 为空.
+ *
+ * @return -2 if @c parserType is invalid.
  * @return -2 if @c parserType 无效.
  * @return 0 成功.
  */
@@ -163,7 +155,10 @@ exampleHandleDataValueFunc( unsigned char extendedCodeLevel,
                             unsigned char code,
                             unsigned char numBytes,
                             const unsigned char *value,
-                            void *customData );
+                            void *customData )
+{
+
+}
 
 
 /**
