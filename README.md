@@ -932,7 +932,7 @@ DC HighAlpha 3/3
 
 CB HighBeta 2/3
 
-9D HighBeta
+9D HighBeta 3/3
 
 03 LowGamma 1/3
 
