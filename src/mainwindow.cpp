@@ -7,10 +7,13 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     loadSkin(1);
+
+    parser = new Parser();
 }
 
 MainWindow::~MainWindow()
 {
+    delete parser;
     delete ui;
 }
 
@@ -64,4 +67,22 @@ void MainWindow::on_actionLighter_triggered()
 void MainWindow::on_actionGray_triggered()
 {
     loadSkin(3);
+}
+
+void MainWindow::on_actionOpen_triggered()
+{
+    filePath = QFileDialog::getOpenFileName(this,tr("Open"),filePath);
+    if(filePath.isEmpty()) return;
+
+    parser->parserFile(filePath);
+}
+
+void MainWindow::on_actionData_triggered()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_actionGraphic_triggered()
+{
+    ui->stackedWidget->setCurrentIndex(1);
 }

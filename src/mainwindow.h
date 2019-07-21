@@ -8,8 +8,10 @@
 #include <QDesktopServices>
 #include <QMessageBox>
 #include <QUrl>
+#include <QFileDialog>
 
 #include "thinkgearstreamparser.hpp"
+#include "parser.hpp"
 
 namespace Ui {
 class MainWindow;
@@ -39,8 +41,17 @@ private slots:
 
     void on_actionGray_triggered();
 
+    void on_actionOpen_triggered();
+
+    void on_actionData_triggered();
+
+    void on_actionGraphic_triggered();
+
 private:
     Ui::MainWindow *ui;
+    QString filePath;
+
+    Parser *parser;
 };
 
 #endif // MAINWINDOW_H
