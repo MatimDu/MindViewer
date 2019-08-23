@@ -22,3 +22,7 @@ RESOURCES += \
 
 FORMS += \
     mainwindow.ui
+
+ICON += icon.rc
+
+RC_FILE += icon.rc
