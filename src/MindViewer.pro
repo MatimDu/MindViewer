@@ -14,6 +14,10 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
+    curvebase.hpp \
+    curvechart.h \
+    curvegl.h \
+    curvepainter.h \
     mainwindow.h \
     parser.hpp \
     thinkgearstreamparser.hpp
